@@ -1,0 +1,33 @@
+name: LVLD Api CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['12.x']
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+      env:
+        ENV_CONTENT: ${{ secrets.ENV_DEV }}
+
+    - name: Add .env file
+      run: |
+        touch .env
+        echo ${{ env:ENV_CONTENT }}
+        echo ${{ env:ENV_CONTENT }} >> .env
+        cat .env

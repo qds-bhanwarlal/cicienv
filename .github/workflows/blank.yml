@@ -28,6 +28,7 @@ jobs:
         ENV_CONTENT: ${{ secrets.ENV_DEV }}
         ENV_TXT: "HELLO WORLD"
       run: |
+        echo ${{ steps.step_name.outputs }}
         touch .env
         echo $ENV_DEV
         cat .env

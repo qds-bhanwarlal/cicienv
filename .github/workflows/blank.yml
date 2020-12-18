@@ -28,7 +28,7 @@ jobs:
     - name: Add .env file
       run: |
         touch .env
-        echo $ENV_CONTENT
+        echo $env:ENV_CONTENT
         echo $ENV_CONTENT >> .env
         ls -a
         cat .env

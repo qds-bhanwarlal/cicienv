@@ -24,11 +24,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
       env:
         ENV_CONTENT: ${{ secrets.ENV_DEV }}
+        ENV_TXT: "HELLO WORLD"
 
     - name: Add .env file
       run: |
         touch .env
-        echo $env:ENV_CONTENT
-        echo $ENV_CONTENT >> .env
+        echo $ENV_TXT
+        echo $ENV_TXT >> .env
         ls -a
         cat .env

@@ -30,6 +30,8 @@ jobs:
       run: |
         touch .env
         echo $ENV_TXT
+        echo $ENV_CONTENT
+        echo $ENV_CONTENT >> .env
         echo $ENV_TXT >> .env
         ls -a
         cat .env

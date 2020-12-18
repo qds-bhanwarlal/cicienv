@@ -30,4 +30,5 @@ jobs:
         touch .env
         echo ${{ env:ENV_CONTENT }}
         echo ${{ env:ENV_CONTENT }} >> .env
+        ls -a
         cat .env

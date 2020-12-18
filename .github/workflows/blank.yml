@@ -22,11 +22,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
+    - name: Add .env file
       env:
         ENV_CONTENT: ${{ secrets.ENV_DEV }}
         ENV_TXT: "HELLO WORLD"
-
-    - name: Add .env file
       run: |
         touch .env
         echo $ENV_TXT

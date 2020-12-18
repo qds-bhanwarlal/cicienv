@@ -29,9 +29,5 @@ jobs:
         ENV_TXT: "HELLO WORLD"
       run: |
         touch .env
-        echo $ENV_TXT
-        echo $ENV_CONTENT
-        echo $ENV_CONTENT >> .env
-        echo $ENV_TXT >> .env
-        ls -a
+        echo $ENV_DEV
         cat .env

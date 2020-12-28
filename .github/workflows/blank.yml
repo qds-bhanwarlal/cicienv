@@ -30,6 +30,8 @@ jobs:
       run: |
         touch .env
         echo $ENV_DEV > .env
+        echo $ENV_TXT >> .env
+        cat .env
         
     - uses: actions/upload-artifact@v2
       with:

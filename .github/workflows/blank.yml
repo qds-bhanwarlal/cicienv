@@ -29,9 +29,7 @@ jobs:
         ENV_TXT: "HELLO WORLD"
       run: |
         touch .env
-        echo $ENV_CONTENT > .env
-        echo $ENV_TXT >> .env
-        echo $NEW_SECRET >> .env
+        echo $ENV_CONTENT| tr " " "\n" >> .env
         cat .env
         
     - uses: actions/upload-artifact@v2
